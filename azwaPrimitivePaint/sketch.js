@@ -4,7 +4,7 @@
 //
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
-
+let squareX = [];
 function setup() {
   createCanvas(1200, 900);
   background(51);
@@ -12,16 +12,25 @@ function setup() {
 
 function keyPressed() {
   if (key === 'a') {
-    rect(mouseX, mouseY, 20, 20);
+    squareX.push(mouseX);
+    rect(mouseX, mouseY, 50, 75);
+    fill(random(255), random(255), random(255)); 
   }
   if (key === 's') {
-    ellipse(mouseX, mouseY, 55, 55);
+    ellipse(mouseX, mouseY, 66, 66);
+    fill(random(255), random(255), random(255));
   }
   if (key === 'd') {
-    quad(mouseX+38, mouseY+31, mouseX+86, mouseY+20, mouseX+69, mouseY+63, 30, mouseX+76);
+    quad(mouseX+38, mouseY+31, mouseX+86, mouseY+20, mouseX+69, mouseY+63, mouseX+30, mouseY+76);
+    fill(random(255), random(255), random(255));
+  }
+  if (key === " ") { 
+
   }
 }
 function draw() {
-  background(51);
-  keyPressed();
+
+  //background(51);
+
+  //keyPressed();
 }
