@@ -41,27 +41,39 @@ function weirdCircle(x, y) { //draws a circle with random angles
 
 
   for (let i = 0; i <= 360; i += STEP_AMOUNT) {
-    let r = 30 + noise(offsets[i]) * 150 ; //gives a controlled random line
+    let r = 30 + noise(offsets[i]) * 15 ; //gives a controlled random line
+    let rTwo = 30 + noise(offsets[i + STEP_AMOUNT]) * 15;
+    let anchor = 30 + noise(offsets[i + STEP_AMOUNT/2]) * 50-25;
     x = r * cos(radians(i));
     y = r * sin(radians(i));
+
+    let x2 = rTwo * cos(radians(i + STEP_AMOUNT));
+    let y2 = rTwo * sin(radians(i + STEP_AMOUNT));
+
+    let xA = anchor * cos(radians(i + STEP_AMOUNT/2));
+    let yA = anchor * sin(radians(i + STEP_AMOUNT/2));
+
     if (i === 0) {
       origX = x;
       origY = y;
+      vertex(x, y);
     }
-    else if(i === STEP_AMOUNT){
-      secondX = x;
-      secondY = y; 
-    }
-    else if(i === 360) {
-      curveVertex(origX, origY);
-      curveVertex(secondX, secondY);
-    }
+    // else if(i === STEP_AMOUNT){
+    //   secondX = x;
+    //   secondY = y; 
+    // }
+    // else if(i === 360) {
+    //   curveVertex(origX, origY);
+    //   curveVertex(secondX, secondY);
+    // }
 
-    else{
-      offsets[i] += 0.01; 
-      curveVertex(x, y);
-    }
-
+    // else{
+    //   offsets[i] += 0.01; 
+    //   curveVertex(x, y);
+    // }
+    bezierVertex(x, y, x2, y2, xA, yA); 
+    offsets[i] += 0.02; 
+    offsets[i + STEP_AMOUNT/2] += 0.02; //always should be even - stepamount
   }
   endShape(CLOSE);
   pop();
