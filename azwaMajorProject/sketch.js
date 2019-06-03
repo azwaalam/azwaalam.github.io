@@ -25,7 +25,6 @@ function weirdCircle(x, y) { //draws a circle with random angles
   stroke(map(shapeX, 0, width, 100, 153), map(shapeX, 0, width, 100, 204), map(shapeX, 0, width, 150, 255));
   push();
   translate(x, y);
-  fill(0);
   beginShape();
   offset = originalOffSet; 
   let origX, origY;
@@ -41,7 +40,7 @@ function weirdCircle(x, y) { //draws a circle with random angles
       x = origX;
       y = origY;
     }
-    offset += 0.1;
+    offset += 0.05; //0.1
     vertex(x, y);
   }
   endShape();
