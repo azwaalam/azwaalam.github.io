@@ -37,7 +37,6 @@ function weirdCircle(x, y) { //draws a circle with random angles
   beginShape();
   offset = originalOffSet; 
   let origX, origY;
-  let secondX, secondY; 
 
 
   for (let i = 0; i <= 360; i += STEP_AMOUNT) {
@@ -58,19 +57,7 @@ function weirdCircle(x, y) { //draws a circle with random angles
       origY = y;
       vertex(x, y);
     }
-    // else if(i === STEP_AMOUNT){
-    //   secondX = x;
-    //   secondY = y; 
-    // }
-    // else if(i === 360) {
-    //   curveVertex(origX, origY);
-    //   curveVertex(secondX, secondY);
-    // }
 
-    // else{
-    //   offsets[i] += 0.01; 
-    //   curveVertex(x, y);
-    // }
     bezierVertex(x, y, x2, y2, xA, yA); 
     offsets[i] += 0.02; 
     offsets[i + STEP_AMOUNT/2] += 0.02; //always should be even - stepamount
