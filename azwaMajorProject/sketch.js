@@ -20,13 +20,12 @@ function setup(){
   createCanvas(windowWidth, windowHeight);
   originalOffSet = random(10); 
   curHeight = height/2; 
+  frameRate(120);
 
   offsets = [];
   for(let a = 0; a < 361; a ++){
     offsets.push(random(100)); 
   }
-  //noLoop();
-
 }
 
 function weirdCircle(x, y) { //draws a circle with random angles
@@ -74,8 +73,7 @@ function flow() {
   scale(1, map(shapeX, 0, width, random(1, 2), random(1, 2)));
   weirdCircle(shapeX, curHeight, shapeX + 1, height);
   pop();
-  xOff += 0.1;
-
+  xOff += 0.5;
 }
 
 function draw() {
