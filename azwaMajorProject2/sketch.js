@@ -1,8 +1,5 @@
-// 
-// Your Name
-// Date
-
-//colors lighter and lines a bit shorter 
+// Major Project: Flames
+//Azwa Alam
 
 let newX;
 let newY;
@@ -14,7 +11,6 @@ let colors = ["#FFDD00","#FFB300","#FF8000","#FF5500","#FF0000","#C21A01"]; //ye
 let changeColors = 5;
 let changeSize = 1500; 
 
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   offsetX = random(10);
@@ -23,8 +19,6 @@ function setup() {
 }
 
 function draw() {
-
-
   if(changeColors > 0){
     flame(colors[changeColors], changeSize);
     changeSize --; //reduces the size by 1
@@ -35,7 +29,7 @@ function draw() {
 }
 
 function flame(c, size) {
-  x = width/2;
+  x = width/2+100;
   y = height/3*5.5; //how far up/down fire is on the screen 
   for (let i = 0; i < size; i++) {
     stroke(c); 

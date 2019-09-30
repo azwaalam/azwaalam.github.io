@@ -8,6 +8,7 @@ let rY = 0;
 let rZ = 0;
 
 function setup() {
+  //createCanvas(windowWidth, windowHeight);
   createCanvas(4500, 3000, WEBGL);
   noStroke();
   noLoop();
